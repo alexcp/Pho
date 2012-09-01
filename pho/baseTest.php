@@ -19,6 +19,5 @@
       }
       $this->fail("no exception raised");
     }
-
   }
 ?>
