@@ -25,11 +25,7 @@ class Pho{
   }
 
   public function respond_to($request_uri){
-    if(isset($this->routes[$request_uri]["template"])){
-      include($this->routes[$request_uri]["template"]);
-    }else if(isset($this->routes[$request_uri]["http_header"])){
-      header($this->routes[$request_uri]["http_header"]);
-    }else{
+    if(!@include($this->routes[$request_uri]["template"])){
       header("Status: 404 Not Found");
     }
   }
