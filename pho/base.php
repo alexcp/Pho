@@ -1,31 +1,34 @@
 <?
+require_once("config.php");
+
 class Pho{
-  public $routes;
-  public $template_directory = "views/";
+  public $resources;
 
   public function request(){
     return $_SERVER["REQUEST_URI"];
   }
 
-  public function route_for($uri,$response){
-    if(isset($response["template"])){
-      $response['template'] = $this->template_directory . $response["template"] . ".php";
-    }else if(!isset($response["http_header"])){
-      throw new InvalidArgumentException('Wrong response type');
-    }
-    $this->add_route($uri,$response);
-  }
-
-  protected function add_route($uri,$response){
-    $this->routes[$uri] = $response; 
+  public function define_resources($resources){
+    $this->resources = $resources;
   }
 
   public function run(){
-    $this->respond_to($this->request());
+    $this->send_to_controller($this->request());
   }
 
-  public function respond_to($request_uri){
-    if(!@include($this->routes[$request_uri]["template"])){
+  public function uri_is_a_resource($request){
+    return in_array($request[1],$this->resources);
+  }
+
+  public function split_uri($uri){
+    return explode("/",$uri);
+  }
+
+  public function send_to_controller($uri){
+    $uri = $this->split_uri($uri);
+    if($this->uri_is_a_resource($uri)){
+      var_dump($uri);
+    }else{
       header("Status: 404 Not Found");
     }
   }

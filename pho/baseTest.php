@@ -4,20 +4,15 @@
   class PhoTest extends PHPUnit_Framework_TestCase{
     protected $pho;
 
-    public function test_route_for(){
+    public function test_uri_is_a_resource(){
       $pho = new Pho;
-      $pho->route_for("/test",array("template"=>"test"));
-      $this->assertEquals(array("/test"=>array('template'=>'views/test.php')),$pho->routes);
+      $pho->define_resources(array("pages","users"));
+      $this->assertTrue($pho->uri_is_a_resource($pho->split_uri("/pages")));
     }
 
-    public function test_route_for_throw_exception_if_wrong_argument(){
+    public function test_send_request_to_controller(){
       $pho = new Pho;
-      try{
-        $pho->route_for("/test",array("template_error"=>"test"));
-      }catch(InvalidArgumentException $expected){
-        return;
-      }
-      $this->fail("no exception raised");
+      $pho->define_resources(array("pages","users"));
     }
   }
 ?>

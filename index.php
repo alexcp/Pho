@@ -2,6 +2,6 @@
 require "pho/base.php";
 
 $pho = new Pho;
-$pho->route_for("/test",array("template"=>"test"));
+$pho->define_resources(array("pages"));
 $pho->run();
 ?>
