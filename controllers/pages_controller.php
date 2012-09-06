@@ -1,6 +1,7 @@
 <?
   class pages_controller{
-    public function index{
+    public static function index(){
+      echo "oui";
     }
   }
 ?>

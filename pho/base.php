@@ -1,5 +1,5 @@
 <?
-require_once("config.php");
+require("config.php");
 
 class Pho{
   public $resources;
@@ -16,8 +16,8 @@ class Pho{
     $this->send_to_controller($this->request());
   }
 
-  public function uri_is_a_resource($request){
-    return in_array($request[1],$this->resources);
+  public function uri_is_a_resource($uri){
+    return in_array($uri[1],$this->resources);
   }
 
   public function split_uri($uri){
@@ -27,7 +27,8 @@ class Pho{
   public function send_to_controller($uri){
     $uri = $this->split_uri($uri);
     if($this->uri_is_a_resource($uri)){
-      var_dump($uri);
+      $controller = $uri[1] . "_controller";
+      $controller::index();
     }else{
       header("Status: 404 Not Found");
     }
