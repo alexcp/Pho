@@ -28,7 +28,8 @@ class Pho{
     $uri = $this->split_uri($uri);
     if($this->uri_is_a_resource($uri)){
       $controller = $uri[1] . "_controller";
-      $controller::index();
+      if($uri[2]==NULL){$uri[2]="index";}
+      $controller::respond_to_request($uri[2]);
     }else{
       header("Status: 404 Not Found");
     }

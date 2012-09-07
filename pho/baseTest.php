@@ -14,7 +14,6 @@
       $pho = new Pho;
       $pho->define_resources(array("pages","users"));
       $uri = $pho->split_uri("/pages");
-      $controller = new pages_controller;
     }
   }
 ?>
