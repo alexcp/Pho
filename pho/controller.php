@@ -2,7 +2,7 @@
   class Controller{
 
     public static function availaible_functions(){
-      return array("index","show","new","create","update","destroy");
+      return array("index","new","create","update","destroy");
     }
 
     public function request_is_an_availaible_function($request){
@@ -13,6 +13,13 @@
       if(self::request_is_an_availaible_function($request)){
         if($request=="new"){$request="new_";}
         static::$request();
+      }else{
+        $id = intval($request);
+        if($id!=0){
+          static::show($id);
+        }else{
+          Pho::not_found();
+        }
       }
     }
     public function index(){}
