@@ -17,6 +17,11 @@
       return $result[$id];
     }
 
+    public function update_attribute($nom,$valeur){
+      $this->$nom = $valeur;
+      offres::xml()->edit_attribute($this->id,$nom,$valeur);
+    }
+
     public static function all(){
       $all = array();
       foreach(offres::xml()->get_all() as $obj){

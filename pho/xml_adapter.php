@@ -15,13 +15,25 @@
       return $this->xml->getElementsByTagName($this->plural_name)->item(0)->getElementsByTagName($this->single_name);
     }
 
-    public function find($id){
-      $object = $xml->getElementsById($id);
-      return unserialize($object);
+    public function save(){
+      $this->xml->Save("data/data.xml");
     }
 
-    public function save($filename){
-      $xml->Save($filename);
+    public function edit_attribute($id,$attribute,$value){
+      $element = $this->find($id);
+      $element->getElementsByTagName($attribute)->item(0)->nodeValue = $value;
+      $this->save();
+      return $element;
+    }
+
+    public function find($id){
+      $element;
+      foreach($this->get_all() as $obj){
+        if($obj->getAttribute("id")){
+          $element = $obj;
+        }
+      }
+      return $element;
     }
 
     public function create($type,$object){
