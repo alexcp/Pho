@@ -3,7 +3,7 @@
 
     // pages
     public function index(){
-      echo "index";
+      pages::all();
     }
 
     // pages/new
@@ -13,7 +13,7 @@
 
     // pages/show/id
     public function show($id){
-      echo $id;
+      pages::show();
     }
   }
 ?>
