@@ -8,7 +8,7 @@
       $this->xml = new DOMDocument();
       $this->plural_name = $name;
       $this->single_name = preg_replace('/s$/','',$name);
-      $this->xml->Load("data/$name.xml");
+      $this->xml->Load("data/data.xml");
     }
 
     public function get_all(){
