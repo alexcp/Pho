@@ -3,7 +3,7 @@
 
     // offres
     public function index(){
-      offres::all();
+      echo json_encode(offres::all());
     }
 
     // offres/new
@@ -13,7 +13,7 @@
 
     // offres/show/id
     public function show($id){
-      offres::show();
+      echo json_encode(offres::find($id));
     }
   }
 ?>

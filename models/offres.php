@@ -12,11 +12,12 @@
       echo get_class($this);
     }
 
-    public function show(){
-      echo "show";
+    public static function find($id){
+      $result = offres::all();
+      return $result[$id];
     }
 
-    public function all(){
+    public static function all(){
       $all = array();
       foreach(offres::xml()->get_all() as $obj){
         $data = array(
@@ -28,9 +29,9 @@
             $obj->getElementsByTagName("fournisseur")->item(0)->nodeValue,
             $obj->getElementsByTagName("quantite")->item(0)->nodeValue,
             );
-        $all[] = new offres($data);
+        $all[$obj->getAttribute("id")] = new offres($data);
       }
-      var_dump($all);
+      return $all;
     }
 
     public static function xml(){
