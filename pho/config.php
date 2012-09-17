@@ -2,8 +2,8 @@
   include("controller.php");
   include("model.php");
   include("xml_adapter.php");
-  include(dirname(__FILE__)."/../controllers/offres_controller.php");
-  include(dirname(__FILE__)."/../controllers/transactions_controller.php");
-  include(dirname(__FILE__)."/../models/offres.php");
-  include(dirname(__FILE__)."/../models/transactions.php");
+  include(dirname(__FILE__)."/../app/controllers/offres_controller.php");
+  include(dirname(__FILE__)."/../app/controllers/transactions_controller.php");
+  include(dirname(__FILE__)."/../app/models/offres.php");
+  include(dirname(__FILE__)."/../app/models/transactions.php");
 ?>
