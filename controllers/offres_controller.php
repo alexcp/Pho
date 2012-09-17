@@ -3,8 +3,7 @@
 
     // offres
     public function index(){
-      //echo json_encode(offres::all());
-      var_dump(offres::all());
+      echo json_encode(offres::all());
     }
 
     // offres/new

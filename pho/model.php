@@ -26,5 +26,19 @@
       }
     }
 
+    public static function xml(){
+      return new xml_adapter(get_called_class());
+    }
+
+    public static function find($id){
+      $result = static::all();
+      return $result[$id];
+    }
+
+    public function update_attribute($nom,$valeur){
+      $this->$nom = $valeur;
+      static::xml()->edit_attribute($this->id,$nom,$valeur);
+    }
+
   }
 ?>
