@@ -8,7 +8,7 @@
       $this->xml = new DOMDocument();
       $this->plural_name = $name;
       $this->single_name = preg_replace('/s$/','',$name);
-      $this->xml->Load("data/data.xml");
+      $this->xml->Load("data/$name.xml");
     }
 
     public function get_all(){
@@ -16,7 +16,7 @@
     }
 
     public function save(){
-      $this->xml->Save("data/data.xml");
+      $this->xml->Save("data/$this->plural_name.xml");
     }
 
     public function edit_attribute($id,$attribute,$value){

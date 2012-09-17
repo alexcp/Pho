@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transactions>
+  <transaction id="2">
+    <nom>Croteau-Pothier</nom>
+    <prenom>Alexandre</prenom>
+    <numero_carte_credit>null</numero_carte_credit>
+    <email>alexcp.com@gmail.com</email>
+    <offre_id>1</offre_id>
+    <date>15-10-2012</date>
+  </transaction> 
+</transactions>

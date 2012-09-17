@@ -3,5 +3,7 @@
   include("model.php");
   include("xml_adapter.php");
   include(dirname(__FILE__)."/../controllers/offres_controller.php");
+  include(dirname(__FILE__)."/../controllers/transactions_controller.php");
   include(dirname(__FILE__)."/../models/offres.php");
+  include(dirname(__FILE__)."/../models/transactions.php");
 ?>
