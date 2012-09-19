@@ -63,8 +63,8 @@
         </ul><!-- #network -->
         
         <div id="counter">
-        	<p><span class="total">7,720,497</span> Icons Converted
-        	<span class="hour">755</span> In The Last Hour</p>
+        	<p><span class="total">8,074,718</span> Icons Converted
+        	<span class="hour">954</span> In The Last Hour</p>
         </div><!-- #counter -->
     </div><!-- .container -->
 </div><!-- #top -->
@@ -74,7 +74,7 @@
     	<div class="lcol">
         
         	<div id="intro">
-                <h2><a href="" id="logo">CI</a> ConvertIco</h2>
+                <h2><a href="" id="logo" title="ConvertIco.com">CI</a> ConvertIco</h2>
                 <h3>PNG to ICO / ICO to PNG Conversion</h3>
                 <p><strong>ConvertICO</strong> is a <strong>Free Online ICO/PNG File Converter</strong>.
     It is fast, free and easy to use. It is used to convert Desktop Icons, App Icons as well as the much needed favicons for websites. Go ahead and give it a try, you will be pleased. <a class="expand" href="#instructions">Click Here for Instructions</a></p>
@@ -127,7 +127,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
             	<h4>Recently Converted</h4>
             	<div id="recentView">
 	            	<ul class="iconslist">
-	                    <li><img src="/images/1346797472.82/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1346797472.74/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1346797453.96/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1346797453.09/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1346797448.12/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1346797444.93/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1346797433.3/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1346797426.79/_previmg.png" alt='The latest Converted Icons'/></li>	                </ul>
+	                    <li><img src="/images/1347998381.6/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1347998381.03/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1347998379.5/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1347998376.98/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1347998374.78/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1347998373.29/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1347998371.2/_previmg.png" alt='The latest Converted Icons'/></li><li><img src="/images/1347998367.7/_previmg.png" alt='The latest Converted Icons'/></li>	                </ul>
 	        	</div>
             </div><!-- #recent -->
         </div><!-- #convert -->

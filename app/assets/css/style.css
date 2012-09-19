@@ -1,3 +1,40 @@
+html{
+  background:#f9f9f9;
+}
 body{
   background:#fff;
+  width:1000px;
+  margin:auto;
+  font-family:helvetica,arial,sans-serif;
+  font-size:15px;
+}
+header{
+  padding:10px;
+  height:100px;
+}
+header h1{
+  float:left;
+  padding-top:10px;
+  padding-right:20px;
+}
+header li{
+  float:left;
+  list-style-type:none;
+  padding:20px 5px 0 5px;
+}
+
+section{
+  clear:both;
+}
+#offres li a{
+  font-size:20px;
+  font-weight:bold;
+  text-transform:capitalize;
+}
+#offres p{
+  padding:0;
+  margin:5px 0;
+}
+.quantite{
+  font-size:10px;
 }
