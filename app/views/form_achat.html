@@ -3,11 +3,11 @@
   <form class="form_achat">
     <div class="offre_details">
       <label>Nom</label>
-      <input name="nom" required />
+      <input name="nom" pattern="[\D]{2}" required />
     </div>
     <div class="offre_details">
       <label>Prénom</label>
-      <input name="prenom" required />
+      <input name="prenom" pattern="[\D]{2}" required />
     </div>
     <div class="offre_details">
       <label>E-mail</label>
@@ -15,7 +15,7 @@
     </div>
     <div class="offre_details">
       <label>Numéro de Carte de Crédit</label>
-      <input name="carte_credit" required />
+      <input name="carte_credit" pattern="[0-9]{13,16}" required />
       <button class="envoyer">Acheter</button>
       <button class="annuler">Annuler</button>
     </div>
