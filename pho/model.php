@@ -22,7 +22,9 @@
 
     public function __construct($data){
       foreach($data as $key => $value){
-        $this->$key = $value;
+        if(array_key_exists($key,get_class_vars(get_class($this)))){
+          $this->$key = $value;
+        }
       }
     }
 
