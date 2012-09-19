@@ -50,6 +50,10 @@ section{
   padding:10px;
   border-bottom:dashed 1px #dcdcdc;
 }
+.achat h2{
+  padding:50px 350px;
+  font-weight:bold;
+}
 #offres {
   padding:0;
 }

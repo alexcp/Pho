@@ -7,5 +7,6 @@
     public $date_expiration;
     public $fournisseur;
     public $quantite;
+    public $image;
   }
 ?>
