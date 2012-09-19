@@ -1,8 +1,10 @@
 html{
   background:#f9f9f9;
 }
+li{
+  list-style-type:none;
+}
 body{
-  background:#fff;
   width:1000px;
   margin:auto;
   font-family:helvetica,arial,sans-serif;
@@ -12,29 +14,42 @@ header{
   padding:10px;
   height:100px;
 }
-header h1{
+#logo{
   float:left;
-  padding-top:10px;
-  padding-right:20px;
+}
+header{
+  border-bottom:solid 1px #000;
+  padding-bottom:50px;
+}
+header ul{
+  float:right;
 }
 header li{
   float:left;
-  list-style-type:none;
-  padding:20px 5px 0 5px;
+  padding:0 5px;
+  margin-top:60px;
+}
+header li a{
+  text-decoration:none;
+  font-weight:bold;
+  color:#000;
+  letter-spacing:1px;
+}
+header li a:hover{
+  color:#FF2828;
 }
 
 section{
   clear:both;
 }
-#offres li a{
-  font-size:20px;
-  font-weight:bold;
-  text-transform:capitalize;
-}
-#offres p{
+#offres {
   padding:0;
-  margin:5px 0;
 }
-.quantite{
-  font-size:10px;
+#offres li{
+  clear:both;
+}
+.offre_details{
+  float:left;
+  width:230px;
+  padding:10px;
 }
