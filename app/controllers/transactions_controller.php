@@ -6,9 +6,12 @@
       echo json_encode(transactions::all());
     }
 
-    // transactions/new
-    public function new_(){
-      transactions::new_();
+    public function create(){
+      //var_dump($_REQUEST);
+      //$test = new transactions($_REQUEST);
+      $test = offres::find(1);
+      var_dump($test);
+      $test->save();
     }
 
     // transactions/show/id

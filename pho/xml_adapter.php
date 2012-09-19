@@ -23,27 +23,26 @@
       $element = $this->find($id);
       $element->getElementsByTagName($attribute)->item(0)->nodeValue = $value;
       $this->save();
-      return $element;
     }
 
     public function find($id){
-      $element;
+      $element = null;
       foreach($this->get_all() as $obj){
-        if($obj->getAttribute("id")){
+        if($obj->getAttribute("id") == $id){
           $element = $obj;
         }
       }
       return $element;
     }
 
-    public function create($type,$object){
-      $new = $xml->createElement($type,$serialize($object));
-      $new->setAttribute("id",$object->id());
+    public function create($key_value){
+      //$this->xml->createElement("ok","oui");
+      $this->save();
     }
 
     public function remove($id){
-      $element = $xml->getElementsById($id); 
-      $xml->removeChild($element);
+      $element = $this->xml->getElementById($id); 
+      $this->xml->removeChild($element);
     }
 
   }

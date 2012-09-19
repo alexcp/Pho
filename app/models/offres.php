@@ -8,5 +8,6 @@
     public $fournisseur;
     public $quantite;
     public $image;
+    public $vendu;
   }
 ?>

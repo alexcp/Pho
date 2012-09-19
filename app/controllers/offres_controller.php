@@ -8,7 +8,8 @@
 
     // offres/new
     public function new_(){
-      offres::new_();
+      $test = offres::find("1");
+      var_dump($test);
     }
 
     // offres/show/id

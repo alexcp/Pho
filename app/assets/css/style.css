@@ -65,6 +65,10 @@ section{
   width:230px;
   padding:10px;
 }
+#offres img{
+  width:150px;
+  height:150px;
+}
 label,button{
   display:block;
 }

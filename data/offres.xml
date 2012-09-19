@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <offres>
   <offre id="1">
-    <nom>Super 2 pour 1</nom>
+    <nom>Super 2 pour un!</nom>
     <description>Obtenez 2 pizza de format large pour seulement 10$</description>
     <prix>10</prix>
     <date_expiration>10-11-2012</date_expiration>
     <fournisseur>Pizza Palace</fournisseur>
     <quantite>25</quantite>
     <image>pizza.jpg</image>
+    <vendu>16</vendu>
+  </offre>
+  <offre id="2">
+    <nom>Un massage d'une heure</nom>
+    <description>Recevez un Massage d'une heure à moitié prix.</description>
+    <prix>30</prix>
+    <date_expiration>20-11-2012</date_expiration>
+    <fournisseur>Spa Montréal</fournisseur>
+    <quantite>110</quantite>
+    <image>massage.jpg</image>
+    <vendu>23</vendu>
+  </offre>
+  <offre id="3">
+    <nom>Vérification complète</nom>
+    <description>Inspection de votre véhicule pour 20$, d'une valeur de 50$.</description>
+    <prix>20</prix>
+    <date_expiration>10-10-2012</date_expiration>
+    <fournisseur>Canadian Tire</fournisseur>
+    <quantite>210</quantite>
+    <image>auto.jpg</image>
+    <vendu>56</vendu>
+  </offre>
+  <offre id="5">
+    <nom>Photographe</nom>
+    <description>Session de 3 heure avec un photographe professionel.</description>
+    <prix>200</prix>
+    <date_expiration>10-10-2012</date_expiration>
+    <fournisseur>Photo Pro</fournisseur>
+    <quantite>40</quantite>
+    <image>photo.jpg</image>
+    <vendu>5</vendu>
   </offre>
 </offres>

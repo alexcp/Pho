@@ -1,8 +1,5 @@
 <?
   class Model{
-    function new_(){}
-    function save(){}
-
     public static function all(){
       $all = array();
       $data = array();
@@ -39,8 +36,11 @@
 
     public function update_attribute($nom,$valeur){
       $this->$nom = $valeur;
-      static::xml()->edit_attribute($this->id,$nom,$valeur);
+      return static::xml()->edit_attribute($this->id,$nom,$valeur);
     }
 
+    public function save(){
+      static::xml()->create("ok");
+    }
   }
 ?>

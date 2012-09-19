@@ -5,7 +5,7 @@ $(document).ready(function(){
     success:function(offres){
       $.each(offres,function(key,val){
         $("#offres").append('<li>'
-          +'<div class="offre_details"><img src="/app/assets/images/pizza.jpg" /></div>'
+          +'<div class="offre_details"><img src="/app/assets/images/'+ val["image"] +'" /></div>'
           +'<div class="offre_details">'+ val["nom"] +'<p>'+ val["fournisseur"] +'</p></div>'
           +'<div class="offre_details">'+ val["description"] +'</div>'
           +'<div class="offre_details">'+ val["prix"] +'$'
@@ -22,8 +22,9 @@ $(document).ready(function(){
           $(pressed_button).parent().parent().after(form);
           $(".achat").hide().slideDown(500);
           $(".form_achat").submit(function(){
-            $.ajax("/transactions/new",{
-              data:$(".form_achat").serialize()+"&offre_id="+offre_id,
+            var new_id = Math.random() * new Date();
+            $.ajax("/transactions/create",{
+              data:$(".form_achat").serialize()+"&offre_id="+offre_id+"&id="+new_id.toString(),
               type: 'post',
               timeout: 8000,
               success:function(){
@@ -38,7 +39,7 @@ $(document).ready(function(){
           });
           $(".annuler").click(function(){
             $(".achat").remove();
-            $(pressed_button).show();
+            $(".acheter").show();
           });
         });
       });
