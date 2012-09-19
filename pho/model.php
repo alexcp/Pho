@@ -40,7 +40,7 @@
     }
 
     public function save(){
-      static::xml()->create("ok");
+      return static::xml()->create(get_object_vars($this));
     }
   }
 ?>

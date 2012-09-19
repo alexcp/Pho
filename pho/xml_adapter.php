@@ -35,8 +35,17 @@
       return $element;
     }
 
-    public function create($key_value){
-      //$this->xml->createElement("ok","oui");
+    public function create($obj_values){
+      $new = $this->xml->createElement($this->single_name);
+      $new->appendChild($this->xml->createAttribute("id"));
+      $new->setAttribute('id',$obj_values["id"]);
+      foreach($obj_values as $key => $value){
+        if($key != "id"){
+          $new->appendChild($this->xml->createElement($key,$value));
+        }
+      }
+      $root_element = $this->xml->getElementsByTagName($this->plural_name)->item(0);
+      $root_element->appendChild($new);
       $this->save();
     }
 

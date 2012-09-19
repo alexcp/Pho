@@ -7,11 +7,12 @@
     }
 
     public function create(){
-      //var_dump($_REQUEST);
-      //$test = new transactions($_REQUEST);
-      $test = offres::find(1);
-      var_dump($test);
-      $test->save();
+      if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $transaction = new transactions($_REQUEST);
+        $offre = offres::find($transaction->offre_id);
+        $offre->nouvelle_transaction();
+        $transaction->save();
+      }
     }
 
     // transactions/show/id

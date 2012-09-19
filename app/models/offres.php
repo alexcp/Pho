@@ -9,5 +9,12 @@
     public $quantite;
     public $image;
     public $vendu;
+
+    public function nouvelle_transaction(){
+      $this->quantite--;
+      $this->vendu++;
+      $this->update_attribute("quantite",$this->quantite);
+      $this->update_attribute("vendu",$this->vendu);
+    }
   }
 ?>
