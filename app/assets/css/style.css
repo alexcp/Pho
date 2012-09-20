@@ -44,7 +44,7 @@ section{
 }
 .achat{
   background:#fff;
-  height:200px;
+  height:250px;
 }
 .achat h3{
   padding:10px;
@@ -103,8 +103,9 @@ footer{
   font-size:12px;
 }
 #fin{
-  margin:0 450px;
+  margin:0 420px;
 }
-#achat p{
-  margin:0 300px;
+.achat p{
+  padding:0 300px;
+  margin-top:-50px;
 }

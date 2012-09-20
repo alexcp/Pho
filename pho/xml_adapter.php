@@ -36,6 +36,7 @@
     }
 
     public function create($obj_values){
+      $this->xml->formatOutput = true;
       $new = $this->xml->createElement($this->single_name);
       $new->appendChild($this->xml->createAttribute("id"));
       $new->setAttribute('id',$obj_values["id"]);

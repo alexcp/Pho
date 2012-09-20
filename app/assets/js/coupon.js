@@ -105,10 +105,10 @@ $(document).ready(function(){
                 type: 'post',
                 timeout: 8000,
                 success:function(confirmation){
-                  $(".achat").css("background","#f9f9f9").html("<h2>Merci de votre achat.</h2>"
+                  $(".achat").html("<h2>Merci de votre achat.</h2>"
                     +"<p>Votre numéro de confirmation est: "+confirmation+"</p><button id='fin'>Terminer</button>");
                   $("#fin").click(function(){
-                    $(".achat").fadeOut(5000,function(){
+                    $(".achat").fadeOut(2000,function(){
                       $(".achat").remove();
                       obtenir_offres();
                       do_refresh = true;
