@@ -1,12 +1,16 @@
 <?
   class Controller{
 
-    public static function availaible_functions(){
-      return array("index","new","create","update","destroy");
+    private static function availaible_functions(){
+      return get_class_methods(get_called_class());
     }
 
-    public function request_is_an_availaible_function($request){
-      return in_array($request,self::availaible_functions());
+    private static function request_is_an_availaible_function($request){
+      return in_array($request,self::availaible_functions()) && !Controller::function_belongs_to_controller($request);
+    }
+
+    private static function function_belongs_to_controller($function_name){
+      return in_array($function_name,Controller::availaible_functions());
     }
 
     public static function respond_to_request($request){
@@ -14,19 +18,12 @@
         if($request=="new"){$request="new_";}
         static::$request();
       }else{
-        $id = intval($request);
-        if($id!=0){
-          static::show($id);
+        if(is_numeric($request)){
+          static::show($request);
         }else{
           Pho::not_found();
         }
       }
     }
-    public function index(){Pho::not_found();}
-    public function show(){Pho::not_found();}
-    public function new_(){Pho::not_found();}
-    public function create(){Pho::not_found();}
-    public function update(){Pho::not_found();}
-    public function destroy(){Pho::not_found();}
   }
 ?>
