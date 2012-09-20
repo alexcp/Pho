@@ -13,6 +13,7 @@
         if($offre->valide_la_transaction($transaction->date)){
           $offre->nouvelle_transaction();
           $transaction->save();
+          Controller::render_json($transaction->id);
         }else{
           header("Status: 406 Not Acceptable");
         }

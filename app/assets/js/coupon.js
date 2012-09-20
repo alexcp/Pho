@@ -104,12 +104,15 @@ $(document).ready(function(){
                 data:$(".form_achat").serialize()+"&offre_id="+offre_id+"&id="+new_id.toString()+"&date="+date,
                 type: 'post',
                 timeout: 8000,
-                success:function(){
-                  $(".achat").css("background","#f9f9f9").html("<h2>Merci de votre achat.</h2>");
-                  $(".achat").fadeOut(5000,function(){
-                    $(".achat").remove();
-                    obtenir_offres();
-                    do_refresh = true;
+                success:function(confirmation){
+                  $(".achat").css("background","#f9f9f9").html("<h2>Merci de votre achat.</h2>"
+                    +"<p>Votre numéro de confirmation est: "+confirmation+"</p><button id='fin'>Terminer</button>");
+                  $("#fin").click(function(){
+                    $(".achat").fadeOut(5000,function(){
+                      $(".achat").remove();
+                      obtenir_offres();
+                      do_refresh = true;
+                    });
                   });
                   $(".acheter").show();
                 }

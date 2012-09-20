@@ -6,9 +6,9 @@
     <prix>10</prix>
     <date_expiration>10-11-2012</date_expiration>
     <fournisseur>Pizza Palace</fournisseur>
-    <quantite>16</quantite>
+    <quantite>14</quantite>
     <image>pizza.jpg</image>
-    <vendu>25</vendu>
+    <vendu>27</vendu>
   </offre>
   <offre id="2">
     <nom>Un massage d'une heure</nom>
@@ -16,9 +16,9 @@
     <prix>30</prix>
     <date_expiration>20-11-2012</date_expiration>
     <fournisseur>Spa Montréal</fournisseur>
-    <quantite>109</quantite>
+    <quantite>108</quantite>
     <image>massage.jpg</image>
-    <vendu>24</vendu>
+    <vendu>25</vendu>
   </offre>
   <offre id="3">
     <nom>Vérification complète</nom>
