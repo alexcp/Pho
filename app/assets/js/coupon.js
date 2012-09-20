@@ -22,9 +22,10 @@ $(document).ready(function(){
           $(pressed_button).parent().parent().after(form);
           $(".achat").hide().slideDown(500);
           $(".form_achat").submit(function(){
-            var new_id = Math.random() * new Date();
+            var date = new Date();
+            var new_id = Math.random() * date;
             $.ajax("/transactions/create",{
-              data:$(".form_achat").serialize()+"&offre_id="+offre_id+"&id="+new_id.toString(),
+              data:$(".form_achat").serialize()+"&offre_id="+offre_id+"&id="+new_id.toString()+"&date="+date,
               type: 'post',
               timeout: 8000,
               success:function(){

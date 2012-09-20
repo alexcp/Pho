@@ -6,5 +6,6 @@
     public $carte_credit;
     public $offre_id;
     public $email;
+    public $date;
   }
 ?>

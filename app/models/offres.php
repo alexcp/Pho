@@ -16,5 +16,13 @@
       $this->update_attribute("quantite",$this->quantite);
       $this->update_attribute("vendu",$this->vendu);
     }
+
+    public function valide_la_transaction($date_de_la_transaction){
+      $valide = false;
+      if($this->quantite != 0){
+        $valide = strtotime($this->date_expiration) > strtotime($date_de_la_transaction);
+      }
+      return $valide;
+    }
   }
 ?>

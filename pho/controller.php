@@ -22,11 +22,11 @@
         }
       }
     }
-    public function index(){}
-    public function show(){}
-    public function new_(){}
-    public function create(){}
-    public function update(){}
-    public function destroy(){}
+    public function index(){Pho::not_found();}
+    public function show(){Pho::not_found();}
+    public function new_(){Pho::not_found();}
+    public function create(){Pho::not_found();}
+    public function update(){Pho::not_found();}
+    public function destroy(){Pho::not_found();}
   }
 ?>

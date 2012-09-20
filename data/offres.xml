@@ -6,9 +6,9 @@
     <prix>10</prix>
     <date_expiration>10-11-2012</date_expiration>
     <fournisseur>Pizza Palace</fournisseur>
-    <quantite>19</quantite>
+    <quantite>18</quantite>
     <image>pizza.jpg</image>
-    <vendu>22</vendu>
+    <vendu>23</vendu>
   </offre>
   <offre id="2">
     <nom>Un massage d'une heure</nom>

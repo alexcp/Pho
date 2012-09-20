@@ -10,12 +10,18 @@
       if($_SERVER["REQUEST_METHOD"]=="POST"){
         $transaction = new transactions($_REQUEST);
         $offre = offres::find($transaction->offre_id);
-        $offre->nouvelle_transaction();
-        $transaction->save();
+        if($offre->valide_la_transaction($transaction->date)){
+          $offre->nouvelle_transaction();
+          $transaction->save();
+        }else{
+          header("Status: 406 Not Acceptable");
+        }
+      }else{
+        Pho::not_found();
       }
     }
 
-    // transactions/show/id
+    // transactions/id
     public function show($id){
       echo json_encode(transactions::find($id));
     }
