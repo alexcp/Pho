@@ -1,4 +1,13 @@
 $(document).ready(function(){
+  var do_refresh = true;
+
+  obtenir_offres();
+
+  window.setInterval(function(){
+    if(do_refresh){
+      obtenir_offres();
+    }
+  },15000);
 
   function message_quantite(quantite){
     var reponse;
@@ -40,7 +49,7 @@ $(document).ready(function(){
   function nombre_de_jours_restants(date){
     return Math.ceil((string_to_date(date) - Date.now())/(1000*60*60*24));
   }
-  
+
   function nombre_de_minutes_restantes(date){
     return Math.ceil((string_to_date(date) - Date.now())/(1000*60));
   }
@@ -53,51 +62,69 @@ $(document).ready(function(){
     return reponse;
   }
 
-  $.ajax("/offres/index",{
-    method:"get",
-  dataType:'json',
-  success:function(offres){
-    $.each(offres,function(key,val){
-      $("#offres").append('<li>'
-        +'<div class="offre_details"><img src="/app/assets/images/'+ val["image"] +'" /></div>'
-        +'<div class="offre_details">'+ val["nom"] +'<p>'+ val["fournisseur"] +'</p></div>'
-        +'<div class="offre_details">'+ val["description"] +'</div>'
-        +'<div class="offre_details">'+ val["prix"] +'$'
-        + message_quantite(val["quantite"])
-        + message_date(val["date_expiration"])
-        + bouton_si_valide(val["quantite"],val["date_expiration"],val["id"])
-        +'</li>');
-    });
-    $(".acheter").click(function(){
-      var pressed_button = this;
-      var offre_id = $(this).attr("data-offre_id");
-      $(".acheter").hide();
-      $.get("/app/views/form_achat.html",function(form){
-        $(pressed_button).parent().parent().after(form);
-        $(".achat").hide().slideDown(500);
-        $(".form_achat").submit(function(){
-          var date = new Date();
-          var new_id = Math.random() * date;
-          $.ajax("/transactions/create",{
-            data:$(".form_achat").serialize()+"&offre_id="+offre_id+"&id="+new_id.toString()+"&date="+date,
-            type: 'post',
-            timeout: 8000,
-            success:function(){
-              $(".achat").css("background","#f9f9f9").html("<h2>Merci de votre achat.</h2>");
-              $(".achat").fadeOut(5000,function(){
-                $(".achat").remove();
+  $("#meilleurs_vendeurs").click(function(){
+    do_refresh = false;
+    obtenir_offres("/offres/meilleurs_vendeurs");
+    $('#offres').before("<h1 id='page_title'>Top 3 des meilleurs vendeurs</h1>");
+    return false;
+  });
+
+  function obtenir_offres(url){
+    if(url==null){
+      url = "/offres/index";
+    }
+    $.ajax(url,{
+      method:'get',
+      dataType:'json',
+      success:function(offres){
+        $("#offres").html('');
+        $.each(offres,function(key,val){
+          $("#offres").append('<li>'
+            +'<div class="offre_details"><img src="/app/assets/images/'+ val["image"] +'" /></div>'
+            +'<div class="offre_details">'+ val["nom"] +'<p>'+ val["fournisseur"] +'</p></div>'
+            +'<div class="offre_details">'+ val["description"] +'</div>'
+            +'<div class="offre_details">'+ val["prix"] +'$'
+            + message_quantite(val["quantite"])
+            + message_date(val["date_expiration"])
+            + bouton_si_valide(val["quantite"],val["date_expiration"],val["id"])
+            +'</li>');
+        });
+        $(".acheter").click(function(){
+          var pressed_button = this;
+          var offre_id = $(this).attr("data-offre_id");
+          do_refresh = false;
+          $(".acheter").hide();
+          $.get("/app/views/form_achat.html",function(form){
+            $(pressed_button).parent().parent().after(form);
+            $(".achat").hide().slideDown(500);
+            $(".form_achat").submit(function(){
+              var date = new Date();
+              var new_id = Math.random() * date;
+              $.ajax("/transactions/create",{
+                data:$(".form_achat").serialize()+"&offre_id="+offre_id+"&id="+new_id.toString()+"&date="+date,
+                type: 'post',
+                timeout: 8000,
+                success:function(){
+                  $(".achat").css("background","#f9f9f9").html("<h2>Merci de votre achat.</h2>");
+                  $(".achat").fadeOut(5000,function(){
+                    $(".achat").remove();
+                    obtenir_offres();
+                    do_refresh = true;
+                  });
+                  $(".acheter").show();
+                }
               });
+              return false;
+            });
+            $(".annuler").click(function(){
+              $(".achat").remove();
               $(".acheter").show();
-            }
+              do_refresh = true;
+            });
           });
-          return false;
         });
-        $(".annuler").click(function(){
-          $(".achat").remove();
-          $(".acheter").show();
-        });
-      });
+      }
     });
   }
-  });
+
 });

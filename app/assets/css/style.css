@@ -94,3 +94,11 @@ button:hover{
 :invalid {
   border: 1px solid #ff0000;
 }
+
+footer{
+  color:#5F5F5F;
+  padding-top:30px;
+  padding-bottom:5px;
+  clear:both;
+  font-size:12px;
+}
