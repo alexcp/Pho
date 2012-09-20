@@ -2,11 +2,11 @@
   class transactions_controller extends Controller{
 
     // transactions
-    public function index(){
-      echo json_encode(transactions::all());
+    public static function index(){
+      Controller::render_json(transactions::all());
     }
 
-    public function create(){
+    public static function create(){
       if($_SERVER["REQUEST_METHOD"]=="POST"){
         $transaction = new transactions($_REQUEST);
         $offre = offres::find($transaction->offre_id);
@@ -22,8 +22,8 @@
     }
 
     // transactions/id
-    public function show($id){
-      echo json_encode(transactions::find($id));
+    public static function show($id){
+      Controller::render_json(transactions::find($id));
     }
   }
 ?>

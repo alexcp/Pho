@@ -25,5 +25,11 @@
         }
       }
     }
+
+    public static function render_json($thing_to_render){
+      header("Cache-Control: no-store, no-cache, must-revalidate");
+      header('Content-Type: application/json; charset=utf-8', true,200);
+      echo json_encode($thing_to_render);
+    }
   }
 ?>
