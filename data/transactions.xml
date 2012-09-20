@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transactions>
-  <transaction id="2">
+  <transaction id="1121448327007.334">
     <nom>Croteau-Pothier</nom>
     <prenom>Alexandre</prenom>
-    <numero_carte_credit>null</numero_carte_credit>
+    <carte_credit>1234123412341</carte_credit>
     <email>alexcp.com@gmail.com</email>
     <offre_id>1</offre_id>
-    <date>15-10-2012</date>
+    <date>Thu Sep 20 2012 13:04:19 GMT-0400 (EDT)</date>
   </transaction> 
-<transaction id="1121448327007.334"><nom>yo</nom><prenom>man</prenom><carte_credit>11222333333333</carte_credit><offre_id>2</offre_id><email>man@yo</email><date>Thu Sep 20 2012 13:04:19 GMT-0400 (EDT)</date></transaction></transactions>
+</transactions>
